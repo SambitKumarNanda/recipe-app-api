@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # Installed apps
     'core',
     'user',
+    'recipe',
 
     # Third pary packages
     'rest_framework',
