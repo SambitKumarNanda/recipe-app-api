@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed apps
     'core',
+    'user',
 
     # Third pary packages
     'rest_framework',
-    'psycopg2'
+    'psycopg2',
+    'drf_spectacular',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +55,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     )
+# }
 
 ROOT_URLCONF = 'app.urls'
 
@@ -128,3 +140,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.UserModel'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
